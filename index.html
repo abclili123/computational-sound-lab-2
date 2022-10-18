@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lili's Keyboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+    <script src="main.js"></script>
+    <style>
+        select {
+            font-family: "Arial Black";
+            font-size: 18px;
+        }
+
+        #controller {
+            font-family: "Arial Black";
+            font-size: 20px;
+            position: absolute;
+            left: 50%;
+            top: 85%;
+            transform: translate(-50%, -50%);
+        }
+
+        #animation {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        #words {
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+
+            color: white;
+            font-family: "Arial Black";
+            letter-spacing: 8px;
+            font-size: 50px;
+        }
+
+        table{
+            text-align: center;
+            width: 100%;
+        }
+        td{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="animation"></div>
+<div id="words">music mosaic</div>
+<div id="controller">
+    <table>
+        <th colspan="4">choose waveform:  <select id="wave">
+            <option value="sine">sine</option>
+            <option value="sawtooth">sawtooth</option>
+            <option value="square">square</option>
+            <option value="triangle">triangle</option></select></th>
+        <tr>
+            <td>additive<br><label># of partials:</label><br><input type="number" id="additive" value="0" min="0"></td>
+            <td>am<br><input type="checkbox" id="yesAm"><br><label>modulator freq:</label><br><input type="number" id="am" min="30"></td>
+            <td>fm<br><label>modulator freq:</label><br><input type="number" id="fm" value="0" min="0">
+                <br><label>index of mod:</label><br><input type="number" id="fmInd" value="0" min="0"></td>
+            <td><label>activate lfo:</label><br><input type="checkbox" id="lfo"></td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
